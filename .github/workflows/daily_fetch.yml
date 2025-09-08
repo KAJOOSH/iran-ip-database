@@ -30,7 +30,7 @@ jobs:
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Update output files"
+          commit_message: "Update output files - $(date +'%Y-%m-%d')"
           branch: main
           commit_user_name: github-actions
           commit_user_email: github-actions@github.com
