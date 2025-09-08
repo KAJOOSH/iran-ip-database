@@ -13,4 +13,6 @@ jq -r '.data.resources.ipv4[]' data.json > output/iran_registered_ipv4.txt
 
 jq -r '.data.resources.ipv6[]' data.json > output/iran_registered_ipv6.txt
 
+rm data.json
+
 echo "[✅] Done."
