@@ -1,10 +1,10 @@
 name: Daily Script
 
 on:
-  schedule:
-    - cron: '*/6 * * * *'
   workflow_dispatch:
-
+  schedule:
+    - cron: "0 * * * *" #  run every hour
+    
 jobs:
   build:
     runs-on: ubuntu-latest
