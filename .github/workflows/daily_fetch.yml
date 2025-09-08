@@ -2,7 +2,7 @@ name: Daily Script
 
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '*/6 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -21,11 +21,10 @@ jobs:
           chmod +x scripts/fetch_iran_registered_ips.sh
           ./scripts/fetch_iran_registered_ips.sh
 
-
       - name: Set commit date
         id: vars
-        run: echo "COMMIT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
-
+        run: echo "COMMIT_DATETIME=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+        
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
