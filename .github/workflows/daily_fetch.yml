@@ -21,15 +21,15 @@ jobs:
           chmod +x scripts/fetch_iran_registered_ips.sh
           ./scripts/fetch_iran_registered_ips.sh
 
-      - name: Run script2
-        run: |
-          chmod +x scripts/fetch_iran_routed_ips.sh
-          ./scripts/fetch_iran_routed_ips.sh
-          
+
+      - name: Set commit date
+        id: vars
+        run: echo "COMMIT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Update output files - `date +'%Y-%m-%d %H:%M:%S'`"
+          commit_message: "Update output files - ${{ env.COMMIT_DATE }}"
           branch: main
           commit_user_name: github-actions
           commit_user_email: github-actions@github.com
