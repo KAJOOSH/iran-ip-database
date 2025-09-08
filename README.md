@@ -1,33 +1,45 @@
 # 🇮🇷 Iran IP Masterlist / مرجع همه IPهای ایران
 
-## English
+## فارسی
 
-**Iran IP Masterlist** is a comprehensive and always up-to-date repository of all IP ranges assigned to Iran. This repository fetches the latest IP allocations from RIPE (RIPE NCC) and organizes them into IPv4 and IPv6 lists.  
+**مرجع همه IPهای ایران** یک ریپازیتوری مرکزی است که تمام رنج‌های IP مربوط به ایران را در قالب به‌روز ارائه می‌دهد. داده‌ها مستقیماً از **RIPE NCC** گرفته شده و به دو دسته اصلی تقسیم شده‌اند:
 
-### Features:
-- **Complete Coverage**: All active IP ranges for Iran.
-- **Daily Updates**: Automatically updated daily via GitHub Actions.
-- **Multiple Formats**: JSON and TXT formats available for easy use.
-- **Version History**: Old versions are stored in a `history` folder for reference.
-- **Latest Files**: Quick access to the most recent data through `latest.json` and `latest.txt`.
+1. **IPهای Routed (اعلام شده در اینترنت)**: رنج‌های IP که در جدول مسیریابی اینترنت فعال هستند.  
+   - `iran_routed_ipv4.txt`  
+   - `iran_routed_ipv6.txt`
 
-### Usage:
-- Use `latest.txt` for firewalls or scripts.
-- Parse `latest.json` for programmatic access.
+2. **IPهای Registered (ثبت شده)**: رنج‌های IP که به طور رسمی به ایران اختصاص داده شده‌اند، صرف‌نظر از اینکه در حال حاضر در اینترنت اعلام شده باشند یا نه.  
+   - `iran_registered_ipv4.txt`  
+   - `iran_registered_ipv6.txt`
+
+### ویژگی‌ها:
+- **همیشه به‌روز**: ریپازیتوری به طور منظم با آخرین داده‌های RIPE به‌روزرسانی می‌شود.  
+- **فرمت ساده TXT**: قابل استفاده آسان در اسکریپت‌ها، فایروال‌ها و تنظیمات شبکه.  
+- **قرارگیری در پوشه `output/`**: همه فایل‌ها در پوشه `output` ذخیره شده‌اند تا دسترسی راحت باشد.
+
+### نحوه استفاده:
+- از فایل‌های TXT برای قوانین فایروال یا اسکریپت‌های اتوماسیون استفاده کنید.  
+- هر خط در فایل‌ها نشان‌دهنده یک رنج IP در فرمت CIDR است.
 
 ---
 
-## فارسی
+## English
 
-**مرجع همه IPهای ایران** یک ریپازیتوری کامل و همواره به‌روز از تمام رنج‌های IP اختصاص داده شده به ایران است. این ریپازیتوری آخرین اطلاعات IP را از **RIPE NCC** دریافت کرده و آن‌ها را به صورت IPv4 و IPv6 سازماندهی می‌کند.  
+**Iran IP Masterlist** is a centralized repository providing all the current IP ranges assigned to Iran. The data is fetched directly from **RIPE NCC** and categorized into two main types:
 
-### ویژگی‌ها:
-- **پوشش کامل**: شامل تمام رنج‌های فعال IP ایران.
-- **به‌روزرسانی روزانه**: با استفاده از GitHub Actions به صورت خودکار هر روز به‌روز می‌شود.
-- **چند فرمت**: خروجی JSON و TXT برای استفاده آسان.
-- **تاریخچه نسخه‌ها**: نسخه‌های قبلی در پوشه `history` ذخیره می‌شوند.
-- **دسترسی سریع به آخرین نسخه**: فایل‌های `latest.json` و `latest.txt` همیشه شامل آخرین داده‌ها هستند.
+1. **Routed IPs**: IP ranges that are actively announced in the Internet routing tables.  
+   - `iran_routed_ipv4.txt`  
+   - `iran_routed_ipv6.txt`
 
-### نحوه استفاده:
-- از `latest.txt` برای فایروال‌ها یا اسکریپت‌ها استفاده کنید.
-- از `latest.json` برای دسترسی برنامه‌ای و پردازش داده‌ها استفاده کنید.
+2. **Registered IPs**: IP ranges officially registered for Iran, regardless of whether they are currently routed.  
+   - `iran_registered_ipv4.txt`  
+   - `iran_registered_ipv6.txt`
+
+### Features:
+- **Always up-to-date**: The repository is updated regularly to reflect the latest data from RIPE.  
+- **Simple TXT format**: Easy to use in scripts, firewalls, or network configurations.  
+- **Organized in `output/`**: All files are stored in the `output` folder for easy access.
+
+### Usage:
+- Use the TXT files in your firewall rules or automation scripts.  
+- Each line in the files represents a single IP range in CIDR notation.
