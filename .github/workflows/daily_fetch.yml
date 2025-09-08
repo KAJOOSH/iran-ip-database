@@ -1,0 +1,31 @@
+name: Daily Script
+
+on:
+  schedule:
+    # هر روز ساعت 8 صبح به وقت UTC
+    - cron: '0 8 * * *'
+  workflow_dispatch: # امکان اجرای دستی از GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+        
+      - name: Run script
+        run: |
+          chmod +x scripts/fetch_iran_ips.sh
+          ./scripts/fetch_iran_ips.sh
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update output files"
+          branch: main
+          commit_user_name: github-actions
+          commit_user_email: github-actions@github.com
