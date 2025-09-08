@@ -17,11 +17,16 @@ jobs:
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
         
-      - name: Run script
+      - name: Run script1
         run: |
-          chmod +x scripts/fetch_iran_ips.sh
-          ./scripts/fetch_iran_ips.sh
+          chmod +x scripts/fetch_iran_registered_ips.sh
+          ./scripts/fetch_iran_registered_ips.sh
 
+      - name: Run script2
+        run: |
+          chmod +x scripts/fetch_iran_routed_ips.sh
+          ./scripts/fetch_iran_routed_ips.sh
+          
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
