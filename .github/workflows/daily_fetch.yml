@@ -2,9 +2,8 @@ name: Daily Script
 
 on:
   schedule:
-    # هر روز ساعت 8 صبح به وقت UTC
     - cron: '0 8 * * *'
-  workflow_dispatch: # امکان اجرای دستی از GitHub
+  workflow_dispatch:
 
 jobs:
   build:
